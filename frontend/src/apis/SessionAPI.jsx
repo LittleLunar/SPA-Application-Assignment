@@ -20,7 +20,7 @@ class SessionAPI extends Component {
     try {
       const result = await axios({
         method: "POST",
-        url: "",
+        url: "api/Session/register",
         data: payload,
       });
 
