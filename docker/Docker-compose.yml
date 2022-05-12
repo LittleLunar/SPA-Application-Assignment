@@ -1,0 +1,38 @@
+version: '2'
+services:
+  webapi:
+    container_name: spa_webapi
+    build:
+      context: ../
+      dockerfile: ./docker/webapi.Dockerfile
+    
+    restart: unless-stopped
+
+    ports:
+      - "5000:5000"
+
+    networks:
+      - spa-network
+
+    command: ["dotnet", "spa_backend.dll"]
+
+  mongoDB:
+    container_name: spa_mongo
+    image: mongo:5.0.7
+    volumes:
+      - ../database:/data/db
+    ports:
+      - "27017:27017"
+    restart: unless-stopped
+    networks:
+      - spa-network
+
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=username
+      - MONGO_INITDB_ROOT_PASSWORD=password
+
+
+networks:
+  spa-network:
+    name: spa-network
+    driver: bridge

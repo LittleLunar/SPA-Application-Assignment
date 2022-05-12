@@ -1,0 +1,10 @@
+bin/
+obj/
+publish/
+out/
+database/
+.vscode
+.git
+.gitignore
+*.DS_Store
+.vs
