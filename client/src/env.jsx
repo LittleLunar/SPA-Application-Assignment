@@ -1,6 +1,6 @@
 const APP_CONFIG = {
   DEV: {
-    WEB_API: "https://localhost:7215/",
+    WEB_API: "http://localhost:8000",
   },
   PROD: {
     WEB_API: "",

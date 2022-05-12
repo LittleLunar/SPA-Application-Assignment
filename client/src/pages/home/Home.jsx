@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form";
 import SessionAPI from "../../apis/Sessionapi";
+import axios from "axios";
 function HomePage() {
   const history = useNavigate();
 
@@ -15,6 +16,7 @@ function HomePage() {
   const [passVisible, setPassVisible] = useState(false);
 
   const onSubmit = async (data) => {
+    console.log(`sending to ${axios.defaults.baseURL}/api/Session/login`);
     await SessionAPI.Login(data).then((data) => {
       console.log("response data:");
       console.log(data);
