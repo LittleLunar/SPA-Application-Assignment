@@ -3,10 +3,9 @@ import { Routes, Route } from "react-router-dom";
 import { PAGES } from "./models/routerModel";
 
 const RoutesIndex = () => {
-  
+
   return (
     <>
-
       <Routes>
         {PAGES.map((res, i) => {
           return (
